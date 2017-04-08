@@ -9,6 +9,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="7dp"
+
     tools:context="com.example.kimja.a5th_homework.Main3Activity">
     <TextView
         android:layout_width="match_parent"
@@ -46,20 +47,21 @@
                 android:id="@+id/imgno"
                 android:layout_width="50dp"
                 android:layout_height="68dp"
-                android:layout_weight="1"
+                android:layout_weight="0.35"
                 android:src="@drawable/ggas" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/etmenu1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#ffffff"
-                    android:text="메뉴1(가격)"
-                    android:padding="3dp" />
+                    android:padding="3dp"
+                    android:text="메뉴1(가격)" />
                 <TextView
                     android:id="@+id/etmenu2"
                     android:layout_width="wrap_content"
@@ -131,14 +133,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="right"
+                android:layout_weight="0.01"
                 android:text="등록일:" />
             <TextView
                 android:id="@+id/tvRegdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_span="2"
                 android:paddingLeft="20dp"
-                android:text="등록일자" />
+                android:text="등록일자"
+                android:gravity="fill"/>
         </TableRow>
     </TableLayout>
     <LinearLayout

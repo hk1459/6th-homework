@@ -2,9 +2,11 @@ package com.example.kimja.a5th_homework;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.widget.EditText;
 
 public class information implements Parcelable{
-    private int telnum = 0;
+    private String name = "";
+    private String telnum = "";
     private int pic = 0;
     private String menu1 = "";
     private String menu2 = "";
@@ -14,7 +16,8 @@ public class information implements Parcelable{
 
 
     protected information(Parcel in) {
-        telnum = in.readInt();
+        name = in.readString();
+        telnum = in.readString();
         pic = in.readInt();
         menu1 = in.readString();
         menu2 = in.readString();
@@ -38,7 +41,8 @@ public class information implements Parcelable{
 
 
     public information(){
-        this.telnum = 0;
+        this.name = "";
+        this.telnum = "";
         this.pic = 0;
         this.menu1 = "";
         this.menu2 = "";
@@ -47,21 +51,26 @@ public class information implements Parcelable{
         this.createtime = "";
     }
 
-    public information(int telnum, String menu1, String menu2 , String menu3, String homepage){
+    public void information(String name,String telnum,int pic, String menu1, String menu2 , String menu3, String homepage ,String createtime){
+        this.name = name;
         this.telnum = telnum;
+        this.pic = pic;
         this.menu1 = menu1;
         this.menu2 = menu2;
         this.menu3 = menu3;
         this.homepage = homepage;
+        this.createtime = createtime;
+
     }
 
-    public int getTelnum() {return this.telnum;}
+    public String getTelnum() {return this.telnum;}
     public int getPic(){return this.pic;}
     public String getMenu1() {return this.menu1;}
     public String getMenu2() {return this.menu2;}
     public String getMenu3() {return this.menu3;}
     public String getHomepage() {return this.homepage;}
     public String getCreatetime(){return this.createtime;}
+    public String getName() {return this.name;}
 
 
     @Override
@@ -71,7 +80,8 @@ public class information implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(telnum);
+        dest.writeString(name);
+        dest.writeString(telnum);
         dest.writeInt(pic);
         dest.writeString(menu1);
         dest.writeString(menu2);
@@ -79,4 +89,6 @@ public class information implements Parcelable{
         dest.writeString(homepage);
         dest.writeString(createtime);
     }
+
+
 }
