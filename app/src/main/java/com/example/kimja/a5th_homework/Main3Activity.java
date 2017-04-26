@@ -64,10 +64,8 @@ public class Main3Activity extends AppCompatActivity {
             startActivity(intent);
         }
         else if(v.getId() == R.id.imageView3){ //인터넷 연결?
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
-
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://"+selected.getHomepage()));
             startActivity(intent);
-
         }
     }
 }

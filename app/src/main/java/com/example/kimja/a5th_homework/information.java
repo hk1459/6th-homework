@@ -13,6 +13,7 @@ public class information implements Parcelable{
     private String menu3 = "";
     private String homepage = "";
     private String createtime = "";
+    private int checked = 0;
 
 
     protected information(Parcel in) {
@@ -24,6 +25,7 @@ public class information implements Parcelable{
         menu3 = in.readString();
         homepage = in.readString();
         createtime = in.readString();
+        checked = in.readInt();
     }
 
     public static final Creator<information> CREATOR = new Creator<information>() {
@@ -49,6 +51,7 @@ public class information implements Parcelable{
         this.menu3 = "";
         this.homepage = "";
         this.createtime = "";
+        this.checked = 0;
     }
 
     public void information(String name,String telnum,int pic, String menu1, String menu2 , String menu3, String homepage ,String createtime){
@@ -60,7 +63,6 @@ public class information implements Parcelable{
         this.menu3 = menu3;
         this.homepage = homepage;
         this.createtime = createtime;
-
     }
 
     public String getTelnum() {return this.telnum;}
@@ -71,7 +73,15 @@ public class information implements Parcelable{
     public String getHomepage() {return this.homepage;}
     public String getCreatetime(){return this.createtime;}
     public String getName() {return this.name;}
+    public int getChecked() {return this.checked;}
 
+    public void turnChecked() {
+        if(this.checked == 0){
+            this.checked = 1;
+        } else {
+            this.checked = 0;
+        }
+    }
 
     @Override
     public int describeContents() {
@@ -88,6 +98,7 @@ public class information implements Parcelable{
         dest.writeString(menu3);
         dest.writeString(homepage);
         dest.writeString(createtime);
+        dest.writeInt(checked);
     }
 
 
