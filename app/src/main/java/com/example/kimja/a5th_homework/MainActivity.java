@@ -33,8 +33,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setListview();
+
         init();
+        setListview();
     }
     public void init(){
         editText = (EditText)findViewById(R.id.editText);
